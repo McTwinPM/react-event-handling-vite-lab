@@ -1,27 +1,34 @@
 // Code SubmitButton Component Here
-import React from 'react';
+import React, { useState } from 'react';
 
 
 function SubmitButton (){
+    // const [hovered, setHovered] = useState('');
+    // const [submitted, setSubmitted] = useState('');
+
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        setSubmitted("Password Submitted");
+        console.log("Password Submitted");
     }
-    const hoverEnter = () => {
-        console.log("Mouse Entering");
-    }
-    const hoverLeave = () => {
-        console.log("Mouse Exiting");
-    }
+
     return(
         <>
         <form 
         onSubmit={handleSubmit}>
-        <button type="submit"> Submit Password</button>
-        <div 
-        onMouseEnter={() => hoverEnter}
-        onMouseLeave={() => hoverLeave}>
-            Hover over me!
-        </div>
+            
+        <button type="submit"
+        onMouseEnter={() => {
+            console.log("Mouse Entering");
+        }}
+        onMouseLeave={() => {
+            console.log("Mouse Exiting");
+        }}> Submit Password
+        </button>
+     
         </form>        
         
         </>
